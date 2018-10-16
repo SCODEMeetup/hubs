@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:200,400,600|Rokkitt:300,400');
 
 :root {
-    --smrtblue: 00AEEF;
     /*
     --blue: #007bff;
     --indigo: #6610f2;
