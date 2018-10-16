@@ -55,7 +55,9 @@ body {
 
 .site-header {
     background: url(https://www.columbusunderground.com/wp-content/uploads/2017/08/smart-columbus-03.jpg);
-    background-position: center center;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .site-header .layout-hero {
