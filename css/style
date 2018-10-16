@@ -53,6 +53,10 @@ body {
     font-weight: 200;
 }
 
+.site-header {
+    background: url(https://api.mapbox.com/styles/v1/mathematicscltd/cjnbt3unt62sy2rrw0yoylb3d.html?fresh=true&title=true&access_token=pk.eyJ1IjoibWF0aGVtYXRpY3NjbHRkIiwiYSI6ImNqbXVla3FncjJoYjkzcnFjdzV1czh5NG4ifQ.W3VOBw1dRC2xN2ZVxrD19w#10.0/42.362400/-71.020000/0)
+}
+
 .layout-social .layout-icon {
     font-size: 2em;
 }
