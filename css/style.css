@@ -113,6 +113,10 @@ body {
     font-size: 2.2em;
 }
 
+#page-credits {
+    background: var(--smrt-orange);
+}
+
 .layout-social .layout-icon {
     font-size: 2em;
 }
