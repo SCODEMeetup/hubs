@@ -39,7 +39,7 @@
     --purple: #533777;
 
     /* Page Variables */
-    --smrt-orange: #ffa400;
+    --color-smrt-orange: #ffa400;
     --font-family-serif: Rokkitt, serif;
     --color-text: var(--gray-dark);
     --font-family-text: var(--font-family-serif);
@@ -77,7 +77,7 @@ body {
 }
 
 #page-linden {
-    background: var(--smrt-orange);
+    background: var(--color-smrt-orange);
 }
 
 .page-section-header .page-section-title {
