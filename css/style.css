@@ -99,6 +99,8 @@ body {
 .layout-corridor .layout-title {
     color: #ffa400;
     font-family: var(--font-family-sans-serif);
+    font-weight: 200;
+    font-size: 1.6em;
 }
 
 .layout-social .layout-icon {
