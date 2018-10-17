@@ -117,6 +117,12 @@ body {
     background-color: var(--smrt-orange);
 }
 
+@media screen and (min-width: 768px) {
+    #page-credits {
+        margin: 150px 0 150px 0;
+    }
+}
+
 .layout-social .layout-icon {
     font-size: 2em;
 }
