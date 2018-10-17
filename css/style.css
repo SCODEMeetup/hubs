@@ -92,7 +92,7 @@ body {
     font-weight: 200;
 }
 
-.layout-corridor .layout-image {
+#page-corridor .layout-image {
     max-width: 200px;
 }
 
