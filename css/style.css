@@ -114,7 +114,7 @@ body {
 }
 
 #page-credits {
-    background-color: #ffa400;
+    background-color: var(--smrt-orange);
 }
 
 .layout-social .layout-icon {
