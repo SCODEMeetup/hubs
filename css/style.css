@@ -96,6 +96,11 @@ body {
     max-width: 200px;
 }
 
+.layout-corridor .layout-title {
+    color: #ffa400;
+    font-family: var(--font-family-sans-serif);
+}
+
 .layout-social .layout-icon {
     font-size: 2em;
 }
