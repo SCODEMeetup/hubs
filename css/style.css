@@ -92,6 +92,10 @@ body {
     font-weight: 200;
 }
 
+.layout-corridor .layout-image {
+    max-width: 200px;
+}
+
 .layout-social .layout-icon {
     font-size: 2em;
 }
