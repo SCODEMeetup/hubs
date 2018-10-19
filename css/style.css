@@ -36,6 +36,11 @@
     --font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
 */
     /* Override Variables */
+    --blue: #00aeef;
+    --pink: #ea1d76;
+    --orange: #ffa400;
+    --yellow: #ffc627;
+    --green: #95d600;
     --gray: #7d7d7d;
     --gray-dark: #404040;
     --font-family-sans-serif: 'Source Sans Pro', -apple-system,
