@@ -1,6 +1,7 @@
 /* Load fonts */
 @import url('https://fonts.googleapis.com/css?family=Merriweather:300|Source+Sans+Pro:200,400,600');
 
+/* Variables */
 :root {
     /*
     --blue: #007bff;
@@ -35,14 +36,23 @@
     --font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
 */
     /* Override Variables */
-    --font-family-sans-serif: Raleway, -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    --gray: #7d7d7d;
     --gray-dark: #404040;
-    --purple: #533777;
-
+    --font-family-sans-serif: 'Source Sans Pro', -apple-system,
+      BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
+      Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+      'Segoe UI Symbol';
+    --font-family-serif: 'Merriweather', 'Times New Roman',
+      serif;
+  
     /* Page Variables */
-    --smrt-orange: #ffa400;
-    --font-family-serif: Rokkitt, serif;
+  
+    --font-weight-light: 200 !important;
+    --color-medium: #ddd;
+    --color-reverse: var(--gray-dark);
     --color-text: var(--gray-dark);
+    --color-text-reverse: var(--light);
+    --font-family-title: var(--font-family-sans-serif);
     --font-family-text: var(--font-family-serif);
 }
 
