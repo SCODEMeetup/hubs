@@ -61,10 +61,6 @@
     --font-family-text: var(--font-family-serif);
 }
 
-.family-sans {
-    font-family: var(--font-family-sans-serif);
-}
-
 body {
     font-family: var(--font-family-text);
     color: var(--color-text);
@@ -78,6 +74,7 @@ body {
     background-size: cover;
 }
 
+/* My attempt at text edit, may change */
 .navbar-brand {
     color: var(--yellow);
 }
