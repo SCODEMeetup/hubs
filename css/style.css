@@ -78,6 +78,10 @@ body {
     background-size: cover;
 }
 
+.navbar-brand {
+    color: var(--yellow);
+}
+
 .layout-text {
     font-size: 1.1em;
 }
