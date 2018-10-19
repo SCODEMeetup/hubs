@@ -74,11 +74,6 @@ body {
     background-size: cover;
 }
 
-/* My attempt at text edit, may change */
-.navbar-brand {
-    color: var(--yellow);
-}
-
 .layout-text {
     font-size: 1.1em;
 }
