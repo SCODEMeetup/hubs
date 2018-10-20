@@ -74,6 +74,25 @@ body {
 
 /* Custom Styles */
 
+.page-section-title {
+    font-size: 4em;
+    font-family: var(--font-family-title);
+    color: var(--gray);
+    line-height: 100%;
+    padding-bottom: 0.15em;
+    margin-top: -0.2em;
+  }
+  
+  .page-section-text {
+    margin-bottom: 2em !important;
+  }
+  
+  .layout-title {
+    font-family: var(--font-family-title);
+    font-weight: 400;
+    font-size: 1.7em;
+  }
+
 .layout-text {
     font-family: var(--font-family-title);
 }
@@ -144,7 +163,7 @@ body {
     font-size: 4em;
     font-family: var(--font-family-sans-serif);
     font-weight: 200;
-    color: var(--purple);
+    color: var(--purple); /* Change to white after all background colors are set */
 }
 
 .page-section-header .page-section-text {
