@@ -1,219 +1,269 @@
-<!doctype html>
+<!doctype <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <!-- FontAwesome CDN -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-        <!-- Bootstrap CDN -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-        <!-- Local CSS -->
-        <link rel="stylesheet" href="css/style.css">
 
-        <title>Smart Mobility Hubs</title>
-    </head>
+<head>
+    <!-- Bootstrap 4 template meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Link to FontAwesome CDN -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <!-- Link to Bootstrap CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- Link to Local CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <!--  Leaflet CSS file  -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+    integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+    crossorigin=""/>
+    <style>#maphubs {  height: 100%;  }</style>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-128133497-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-128133497-1');
+    </script>
     
-    <body data-spy="scroll" data-target=".site-nav" data-offset="55">
-        <header id="page-hero" class="site-header d-flex flex-column align-content-between">
-            <nav class="site-nav family-sans navbar navbar-expand-md navbar-dark fixed-top">
-                <div class="container-fluid">
-                    <a class="text-yellow navbar-brand" href="#page-hero">
-                        <i class="far fa-lightbulb mr-2"></i> SCODE
-                    </a>
-                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#myTogglerNav" aria-controls="myTogglerNav" aria-label="Toggle Navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button><!-- Hamburger button close -->
-                    <div class="collapse navbar-collapse" id="myTogglerNav">
-                        <div class="navbar-nav ml-auto font-weight-regular text-uppercase">
-                            <a class="nav-item nav-link" href="#page-hero">Home</a>
-                            <a class="nav-item nav-link" href="#page-acronyms">Acronyms</a>
-                            <a class="nav-item nav-link" href="#page-linden">Linden</a>
-                            <a class="nav-item nav-link" href="#page-corridor">Corridor</a>
-                            <a class="nav-item nav-link" href="#page-cmax">CMAX</a>
-                            <a class="nav-item nav-link" href="#page-summary">Summary</a>
-                            <a class="nav-item nav-link" href="#page-credits">Credits</a>
-                            <a class="nav-item nav-link" href="#page-source">Source</a>
-                        </div><!-- Navigation bar links close -->
-                    </div><!-- Navbar collapse close -->
-                </div><!-- Fluid Container close -->
-            </nav><!-- Navigation bar close -->
+    <title>Smart Mobility Hubs | SCODE</title>
+</head>
 
-            <!-- Background image example. Doesn't work as advertised. Don't Use. -->
-            <section class="layout-hero jumbotron jumbotron-fluid d-flex align-items-center mt-5 text-reverse">
-                <div class="container text-center">
-                    <div class="row justify-content-center">
-                        <div class="col-11 col-sm-10 col-md-8">
-                            <!-- Commenting out text for now
-                            <h3 class="page-section-title text-reverse">Smart Mobility Hubs</h3>
-                            <p class="page-section-text lead">Columbus is working to make multi-modal transportation as accessible and easy to use as possible.
-                            </p>-->
-                        </div><!-- Column format close -->
-                    </div><!-- Row close -->
-                </div><!-- Text contrainer close -->
-            </section><!-- Jumbotron close -->
-        </header><!-- Header close -->
+<body data-spy="scroll" data-target=".site-nav" data-offset="55">
+  <header id="page-hero" class="site-header">
+      <!-- Navigation Bar: medium breakpoint, gray bar, light text -->
+      <nav class="site-nav family-sans text-uppercase navbar navbar-expand-md navbar-dark fixed-top">
+          <!-- Doesn't align container to the grid, edge of the page instead -->
+          <div class="container-fluid">
+                <!-- Navigation Bar Brand: icon and text -->
+                <a class="navbar-brand"  href="#page-hero">
+                    <i class="far fa-lightbulb mr-2"></i> SCODE</a>
+                <!-- Button for Navigation Bar -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#myTogglerNav"
+                    aria-controls="#myTogglerNav" aria-label="Toggle Navigation">
+                    <!-- Hamburger button icon -->
+                    <span class="navbar-toggler-icon"></span>
+                </button><!-- Button close -->
+                <!-- Create MyTogglerNav -->
+                <section class="collapse navbar-collapse" id="myTogglerNav">
+                    <!-- Holds actual links for Navigation Bar -->
+                    <!-- Margin left align automatic -->
+                    <div class="navbar-nav ml-auto">
+                        <a class="nav-item nav-link" href="#page-hero">home</a>
+                        <a class="nav-item nav-link" href="#page-acronyms">acronyms</a>
+                        <a class="nav-item nav-link" href="#page-purpose">purpose</a>
+                        <a class="nav-item nav-link" href="#page-locations">locations</a>
+                        <a class="nav-item nav-link" href="#page-features">features</a>
+                        <a class="nav-item nav-link" href="#page-credits">credits</a>
+                        <a class="nav-item nav-link" href="#page-sources">sources</a>
+                    </div><!-- Navigation Bar link close -->
+                </section><!-- Navigation Bar collapse close -->
+            </div><!-- Container close -->
+      </nav><!-- Navigation Bar close -->
 
-        <!-- Adding Glossary -->
-        <article id="page-acronyms" class="page-section text-center py-5">
-            <header class="page-section-header container text-center">
-                <h2 class="page-section-title display-4 pt-4 text-center">Acronym List</h2>
-                <p class="page-section-text lead mx-md-5">an abbreviation formed from the initial letters of other words and pronounced as a word</p>
-            </header><!-- Acronym Header close -->
+      <section class="layout-hero d-flex align-items-center">
+        <div class="container"></div>
+      </section>
+  </header>
 
-            <section class="layout-acronyms container my-5">
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col">Acronym</th>
-                            <th scope="col">Meaning</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">HUBS</th>
-                            <td>Smart Mobility Hubs</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">COTA</th>
-                            <td>Central Ohio Transit Authority</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">FMLM</th>
-                            <td>First Mile/Last Mile</td>
-                        </tr>
-                    </tbody>
-                </table><!-- Acronym Table close -->
-            </section><!-- Acronym Container close -->
-        </article>
+  <article id="page-acronyms" class="page-section text-center py-5">
+    <header class="page-section-header container">
+        <div class="row justify-content-center">
+            <div class="col-11 col-sm-10-col-md-8">
+                <h2 class="layout-title">Acronym List</h2>
+            </div><!--Column close -->
+        </div><!-- Row close -->
+    </header><!--Acronyms Header close -->
+    <section class="layout-acronyms container my-5 family-sans">
+        <table class="table table-striped table-bordered table-dark table-sm">
+            <thead>
+                <tr>
+                    <th scope="col">Acronym</th>
+                    <th scope="col">Meaning</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row"><a href="https://smart.columbus.gov/projects/#project--smart-mobility-hubs" class="badge badge-pill badge-warning" target="_blank">HUBS</a></th>
+                    <td>Smart Mobility Hubs</td>
+                </tr>
+                <tr>
+                    <th scope="row"><a href="https://smart.columbus.gov/projects/#project--multimodal-trip-planningcommon-payment-system" class="badge badge-pill badge-warning" target="_blank">MMTPA</th>
+                    <td>Multimodal Trip Planning Application</td>
+                </tr>
+                <tr>
+                    <th scope="row">CPS</th>
+                    <td>Common Payment System</td>
+                </tr>
+                <tr>
+                    <th scope="row">FMLM</th>
+                    <td>First Mile/Last Mile</td>
+                </tr>
+                <tr>
+                    <th scope="row"><a href="https://www.cota.com" class="badge badge-pill badge-warning" target="_blank">COTA</a></th>
+                    <td>Central Ohio Transit Authority</td>
+                </tr>
+                <tr>
+                    <th scope="row">TNC</th>
+                    <td>Transportation Network Company</td>
+                </tr>
+            </tbody>
+        </table><!-- Acronym Table close -->
+    </section><!-- Acronym Container close -->
+  </article>
 
-        <!-- Multicolumn example. Need to add more content to say if it works correctly -->
-        <article id="page-linden" class="page-section text-center py-5">
-            <header class="page-section-header container">
-                <div class="row justify-content-center family-sans">
-                    <div class="col-11 col-sm-10 col-md-8">
-                        <h2 class="page-section-title">Linden Transit Center</h2>
-                        <p class="page-section-text">In 1999, <a href="https://www.cota.com/who-we-are/history/" target="_blank"> COTA</a> built its first Transit Center in Linden. The Transit Center offers child care, banking, and information riders need for taking the bus.</p>
+  <article id="page-purpose" class="page-section py-5">
+      <header class="page-section-header container text-center">
+          <h2 class="layout-title">Purpose</h2>
+          <blockquote class="blockquote">
+              <p class="layout-text">The purpose of the HUBS project is to deploy transportation facilities that provide travelers with consolidated transportation amenities such as interactive kiosks, provide access to comprehensive trip-planning tools (via MMTPA/CPS) and real-time transportation information, and are designed to accommodate multiple modes of transit from a single location including bike-share, car-share and mobility providers. These services are particularly useful in the completion of FMLM and multimodal trip options.</p>
+              <footer class="blockquote-footer">Project Scope in <a href="https://smart.columbus.gov/uploadedFiles/Projects/Smart%20Columbus%20Smart%20Mobility%20Hubs%20ConOps%202018-07-30_v2.pdf#page=10" class="badge badge-pill badge-primary" target="_blank">Concept of Operations</a> for Smart Mobility Hubs</footer>
+          </blockquote>
+      </header>
+  </article>
+
+  <article id="page-locations" class="page-section py-5">
+        <header class="page-section-header container text-center">
+            <h2 class="layout-title">Proposed HUBS Facilities</h2>
+            <p class="layout-text">Six initial HUBS deployment locations were selected along the Cleveland Avenue Corridor, coinciding with COTA's <a href="https://www.cota.com/initiatives/cmax-bus-rapid-transit" class="badge badge-pill badge-warning" target="_blank">CMAX</a> service in the Linden Residential District and the Easton Commercial District.</p>
+        </header>
+        <section class="layout-locations container my-5">
+            <div id="maphubs"></div>
+        </section>
+  </article>
+
+  <article id="page-features" class="page-section py-5">
+        <header class="page-section-header container text-center">
+            <h2 class="layout-title">Proposed Amenities</h2>
+            <p class="layout-text">The HUBS Facility is the physical site that consolidates the amenities of the HUBS System, which include an interactive kiosk, real-time information displays, pick-up/drop-off areas, bikeshare docks, bike racks, and parking spaces for mobility providers, park and ride, and carshares. Individual HUBS facilities will vary in size, configuration and available services. The following are descriptions of <a href="https://smart.columbus.gov/uploadedFiles/Projects/SCC-B-SysReq_HUBS_DRAFT_20181003_v1a.pdf#page=15" class="badge badge-pill badge-warning" target="_blank">components</a> that may be available at a HUBS facility:</p>
+        </header>
+        <section class="layout-features container py-5">
+            <div class="row text-center">
+                <section class="col-md-4 my-3">
+                    <div class="icon layout-icon">
+                        <i class="fas fa-tv"></i>
                     </div>
-                </div>
-            </header>
-            <section class="layout-linden-container">
-                <div class="row justify-content-center">
-                    <section class="mb-5 col-10 col-md-6 col-lg-4 col-xl-3">
-                        <img class="layout-image" src="images/linden.PNG" alt="Linden">
-                        <h5 class="layout-title pt-2">Mapbox Map</h5>
-                    </section>
-                </div>
-            </section>
-        </article>
+                    <h3 class="layout-title">Interactive Kiosk</h3>
+                    <p class="layout-text">Traveler interactive kiosks will be installed on free standing pylons at HUBS facilities. These kiosks will display real-time travel related information and provide an embedded touch screen display to serve as a direct interface between travelers and the MMTPA/CPS, providing the traveler the ability to plan, schedule and pay for trips using multimodal options available at the HUBS facility, along with additional information and instruction such as directing the traveler to a TNC pickup location.</p>
+                </section>
 
-        <!-- Quick two column layout. Works with Images and text. Example doesn't work.-->
-        <article id="page-corridor" class="page-section py-5">
-            <header class="page-section-header container text-center">
-                <h2 class="page-section-title">Cleveland Avenue Corridor</h2>
-                <p class="page-section-text">The <a href="https://smart.columbus.gov/uploadedFiles/Projects/Smart%20Columbus%20Smart%20Mobility%20Hubs%20ConOps%202018-07-30_v2.pdf#page=10" target="_blank"> geographic scope</a> of the proposed HUBS project deployment includes the Cleveland Avenue corridor coinciding with COTA's Bus Rapid Transit (CMAX) service and the Easton commercial district, providing those in the Linden area better access to jobs and services in the Easton and Downtown Columbus Commercial districts.</p>
-            </header>
-            <section class="layout-corridor container my-5">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <section class="corridor">
-                            <img class="corridor-image" src="images/linden.PNG" alt="Linden image 01">
-                            <!-- Actual BootStrap class -->
-                            <div class="media-body">
-                            <h4 class="layout-title">Easton Commercial District</h4>
-                            <p class="layout-text">Filler text for this section.</p>
-                            </div>
-                        </section>
+                <section class="col-md-4 my-3">
+                    <div class="icon layout-icon">
+                        <i class="fas fa-wifi"></i>
                     </div>
-                </div>
-            </section>
-        </article>
+                    <h3 class="layout-title">Wi-Fi</h3>
+                    <p class="layout-text">HUBS facilities will be equipped with public Wi-Fi that will allow a traveler to access the MMTPA/CPS and other transportation information on his or her personal wireless device.</p>
+                </section>
 
-        <!-- Photogrid example. May not use this. Need lots of pics to test.-->
-        <!-- Carousel example. May not use this. Need lots of pics to test.-->
-        <article id="page-cmax">
-            <p>Placeholder for <a href="https://www.cota.com/initiatives/cmax-bus-rapid-transit" target="_blank"> CMAX</a> section</p>
-        </article>
+                <section class="col-md-4 my-3">
+                    <div class="icon layout-icon">
+                        <i class="fas fa-parking"></i>
+                    </div>
+                    <h3 class="layout-title">Park and Ride</h3>
+                    <p class="layout-text">Designated parking spaces will be available at select HUBS locations and allow a traveler the option to complete a segment of his or her trip using a personal vehicle and parking at HUBS facility, where he or she can utilize the HUBS amenities to continue his or her trip using alternate modes of transportation.</p>
+                </section>
 
-        <!-- Nesting a layout, changes at different breakpoints -->
-        <!-- Putting a grid inside a grid  -->
-        <!-- This works. Use it in real situation -->
-        <article id="page-summary" class="page-section">
-            <div class="layout-summary container py-5">
-                <div class="row justify-content-center">
-                    <section class="col-sm-10 col-md-5 col-lg-12 text-center text-lg-left">
-                        <div class="row align-items-center justify-content-center">
-                            <section class="col-lg-3">
-                                <img class="layout-image" src="images/sigma.PNG" alt="Simga">
-                            </section>
-                            <section class="col-lg-9">
-                                <h2 class="layout-title">Summation</h2>
-                                <p class="layout-text">Placeholder for Summation section. Just need another dummy paragraph.</p>
-                            </section>
-                        </div>
-                    </section>
+                <section class="col-md-4 my-3">
+                    <div class="icon layout-icon">
+                        <i class="fab fa-usb"></i>
+                    </div>
+                    <h3 class="layout-title">USB Charging</h3>
+                    <p class="layout-text">Powered USB ports will be available at the HUBS location to allow travelers to recharge personal electronic devices like cellular phones, tablets, and other wireless devices while planning a trip or waiting for transportation services.</p>
+                </section>
+                
+                <section class="col-md-4 my-3">
+                    <div class="icon layout-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3 class="layout-title">Emergency Call Button</h3>
+                    <p class="layout-text">Kiosks will include an emergency call button that, when activated, will send notification of the help request directly to the 911 emergency call center operated by the City of Columbus and initiate an audio connection between the distressed traveler and an operator at the emergency call center. The emergency call button will be a physical button which may be a located on the interactive kiosk pylon or independently at the HUBS facility.</p>
+                </section>
 
-                    <section class="col-sm-10 col-md-5 col-lg-12 text-center text-lg-left">
-                        <div class="row align-items-center justify-content-center">
-                            <section class="col-lg-3">
-                                <img class="layout-image" src="images/equals.PNG" alt="Simga">
-                            </section>
-                            <section class="col-lg-9">
-                                <h2 class="layout-title">Equality</h2>
-                                <p class="layout-text">Placeholder for Equality section. Just need another dummy paragraph.</p>
-                            </section>
-                        </div>
-                    </section>
-                </div>
+                <section class="col-md-4 my-3">
+                    <div class="icon layout-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="layout-title">Interactive Voice Response</h3>
+                    <p class="layout-text">Kiosks will include capability to connect to an Interactive Voice Response (IVR) system that will allow travelers to interact with the MMTPA and trip planning tools through use of voice commands. The IVR system is a function of the MMTPA project and where it is described in greater detail.</p>
+                </section>
+
+                <section class="col-md-4 my-3">
+                    <div class="icon layout-icon">
+                        <i class="far fa-clock"></i>
+                    </div>
+                    <h3 class="layout-title">Real-Time Data Display</h3>
+                    <p class="layout-text">Real-Time Data Displays will be present at HUBS facilities and will post current transit information, public notifications and other information on kiosk displays and/or on other display monitors at some existing facilities.</p>
+                </section>
+
+                <section class="col-md-4 my-3">
+                    <div class="icon layout-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="layout-title">Personal Wireless Device</h3>
+                    <p class="layout-text">A personal wireless device such as a cell phone or tablet may be used at HUBS facilities to access the MMTPA via public Wi-Fi or through a personal data plan. Wi-Fi access may include the development of a HUBS home webpage that displays or provides links to real-time information that will be displayed on kiosk screens at the HUBS facility. Additionally, trip confirmation codes and other trip information may be sent to the personal wireless device upon traveler request and used to gain access to TNC’s or to unlock bikes at bike-sharing docks.</p>
+                </section>
+
+                <section class="col-md-4 my-3">
+                    <div class="icon layout-icon">
+                        <i class="fas fa-truck-loading"></i>
+                    </div>
+                    <h3 class="layout-title">Designated Passenger Pickup/Drop Off Zones</h3>
+                    <p class="layout-text">Loading zones will be available at HUBS locations in the form of pull off lanes and/or parking spaces located away from travel lanes that will allow safe transfer of passengers between modes of transportation. These zones will primarily be used for mobility providers and will be clearly marked with signage and pavement markings.</p>
+                </section>
+
+                <section class="col-md-4 my-3">
+                    <div class="icon layout-icon">
+                        <i class="fas fa-bicycle"></i>
+                    </div>
+                    <h3 class="layout-title">Dockless Device Parking Zones</h3>
+                    <p class="layout-text">Designated zones will be established for parking dockless devices such as scooters, electric bikes, etc. to prevent interference between this rapidly increasing mode of transportation and other services offered at the HUBS facilities.</p>
+                </section>
             </div>
-        </article>
+        </section>
+  </article>
 
-        <!-- Icon example. May not use this. Need lots of pics to test.-->
-        <!-- Rewatch video. Download SVG and play with colors -->
-        <!-- Floater example. Cool effects in video. Can't get them to work for me. Try again. -->
-        <!-- Watch scrolling to a location -->
-        <article id="page-credits" class="page-section">
-            <section class="row align items-center justify-content-center">
-                <div class="layout-credits container py-5">
-                    <section class="layout-container col-8 col-md-4">
-                        <img class="layout-image" src="images/equals.PNG" alt="Float this equal text.">
-                    </section>
-                    <section class="col-10 col-md-6 text-center text-md-left pl-md-5">
-                        <h2 class="layout-title">Credit Float</h2>
-                        <p class="layout-text">Placeholder for Credits section. This text is about floating and how great it is.</p>
-                    </section>
-                </div>
-            </section>
-        </article>
+  <article id="page-credits" class="page-section py-5">
+    <header class="page-section-header container text-center">
+        <h2 class="layout-title">Credits</h2>
+        <p class="layout-text">This project was created by Jesse Mathews and the EDA team for the <a href="https://www.scodemeetup.org/" class="badge badge-pill badge-primary" target="_blank">SCODE</a> Meetup, November 6th 2018. SCODE is community driven group dedicated to improving lives in Columbus through open data, technology, and education.</p>
+        <p class="layout-text">It was created using Bootstrap 4, Leaflet, jQuery, and Font Awesome.</p>
+    </header>
+  </article>
 
-        <!-- Card layout example. May be same as Bootstrap essentials. Watch later. -->
-        <!-- Interactive section: Modal Example. Placing template after footer. -->
-        <!-- Uses jQuery and a .js page in the example -->
-        <article id="page-source">
-                <p>Placeholder for Source section</p>
-        </article>
+  <article id="page-sources" class="page-section py-5">
+    <header class="page-section-header container text-center">
+        <h2 class="layout-title">Sources</h2>
+        <p class="layout-text">The <a href="https://www.smartcolumbusos.com" class="badge badge-pill badge-primary" target="_blank">Smart Columbus Operating System</a> features an Open Data Platform, which provides anytime access to the city’s latest mobility data.</p>
+    </header>
+  </article>
 
-        <!-- Watch underscore by logos -->
-        <footer class="site-footer bg-reverse">
-            <div class="layout-social container py-5 d-flex justify-content-center">
-                <a class="text-light px-2" href="https://www.meetup.com/Smart-Columbus-Open-Data-Enthusiasts" target="_blank">
-                    <i class="layout-icon fab fa-meetup"></i>
-                </a>
-                <a class="text-light px-2" href="https://techlife-columbus-slack.herokuapp.com" target="_blank">
-                    <i class="layout-icon fab fa-slack-hash"></i>
-                </a>
-                <a class="text-light px-2" href="https://github.com/SCODEMeetup/" target="_blank">
-                    <i class="layout-icon fab fa-github"></i>
-                </a>
-            </div><!-- Layout Social close -->
-        </footer><!-- Footer close -->
+  <!-- Footer: gray background, flex box, content in center -->
+  <footer class="site-footer bg-secondary d-flex justify-content-center">
+    <!-- Add padding to bottom of footer -->
+    <section class="layout-social py-5">
+        <a class="text-light px-2" href="https://www.meetup.com/Smart-Columbus-Open-Data-Enthusiasts" target="_blank">
+            <i class="layout-icon fab fa-meetup"></i>
+        </a>
+        <a class="text-light px-2" href="https://techlife-columbus-slack.herokuapp.com" target="_blank">
+            <i class="layout-icon fab fa-slack-hash"></i>
+        </a>
+        <a class="text-light px-2" href="https://github.com/SCODEMeetup/" target="_blank">
+            <i class="layout-icon fab fa-github"></i>
+        </a>
+    </section><!-- Layout Social close -->
+  </footer><!-- Footer close -->
 
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <!-- Links to Bootstrap 4 template JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <!-- Leaflet JavaScript file -->
+  <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+  integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+  crossorigin=""></script>
+  <!-- Additional JavaScript files -->
+  <script src="js/scrollspy.js"></script>
+  <script src="js/hubs.js"></script>
+</body>
 
-        <!-- Optional JavaScript -->
-        <script src="js/scrollspy.js"></script>
-    </body>
 </html>

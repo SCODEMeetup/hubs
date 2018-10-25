@@ -1,0 +1,165 @@
+/* Load fonts */
+@import url('https://fonts.googleapis.com/css?family=Merriweather:300|Source+Sans+Pro:200,400,600');
+
+/* Variables */
+:root {
+    /* Override Variables */
+    --blue: #00aeef;
+    --purple: #be60f6;
+    --pink: #ea1d76;
+    --orange: #ffa400;
+    --yellow: #ffc627;
+    --green: #95d600;
+    --gray: #7d7d7d;
+    --gray-dark: #404040;
+    
+    --font-family-sans-serif: 'Source Sans Pro', -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol';
+    --font-family-serif: 'Merriweather', 'Times New Roman',
+    serif;
+
+    /* Page Variables */
+    --font-family-serif: Merriweather, serif;
+    --color-text: var(--gray-dark);
+    --font-family-title: var(--font-family-sans-serif);
+    --font-family-text: var(--font-family-serif);
+}
+
+.family-sans {
+    font-family: var(--font-family-sans-serif);
+}
+
+body {
+    font-family: var(--font-family-text);
+    color: var(--color-text);
+    font-weight: 200;
+}
+
+/* Custom Styles */
+.icon {
+    display: inline-block;
+    font-size: inherit;
+    height: 1em;
+    width: 1em;
+    overflow: visible;
+    vertical-align: -0.125em;
+    text-rendering: auto;
+    fill: gray !important;
+    width: 50px;
+    height: 50px;
+  }
+
+.page-section-title {
+    font-size: 4em;
+    font-family: var(--font-family-title);
+    color: var(--gray);
+    line-height: 100%;
+    padding-bottom: 0.15em;
+    margin-top: -0.2em;
+  }
+  
+  .page-section-text {
+    margin-bottom: 2em !important;
+  }
+  
+  .layout-title {
+    font-family: var(--font-family-title);
+    font-weight: 400;
+    font-size: 1.7em;
+  }
+
+.layout-text {
+    font-family: var(--font-family-title);
+}
+
+/* Site Header */
+.site-header {
+    background: url(../images/SCODE.png);
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media screen and (max-width: 768px) {
+    .site-header .navbar-collapse {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    transition: all 0.5s ease-out;
+    }
+  }
+
+.site-nav.inbody {
+    background: var(--secondary);
+}
+
+.site-header .layout-hero {
+    min-height: 50vh;
+}
+
+.site-header .nav-link {
+    position: relative;
+    padding-bottom: 0;
+    margin-bottom: 2px;
+}
+
+.site-header .nav-link:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    max-width: 100px;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--yellow);
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.site-header .nav-link:hover:before {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+/* Layout Acronyms */
+#page-acronyms {
+    background: var(--purple)
+}
+
+/* Layout Purpose */
+#page-purpose {
+    background: var(--orange)
+}
+
+/* Layout Locations */
+#page-locations {
+    background: var(--blue)
+}
+
+/* Layout Features */
+#page-features {
+    background: var(--white)
+}
+
+/* Layout Credits */
+#page-credits {
+    background: var(--green)
+}
+
+/* Layout Sources */
+#page-sources {
+    background: var(--pink)
+}
+
+.layout-features .layout-icon {
+    font-size: 2.8em;
+    padding-bottom: 1.4em;
+    color: var(--gray);
+  }
+
+/* Site Footer */
+.layout-social {
+    font-size: 2em;
+  }
