@@ -27,3 +27,14 @@ L.marker([39.969922, -82.990277], {opacity: 0.75}).addTo(mymap)
 
 L.marker([40.012602, -82.968394], {opacity: 0.75}).addTo(mymap)
     .bindPopup("<b>Columbus Metropolitan Library - Linden Branch</b>").openPopup();
+
+/*
+// Load GeoJSON from Hubs file
+$.getJSON('data/hubs.geojson', function(data) {  
+    L.geoJson(data, {
+        onEachFeature: function (feature, layer) {
+            layer.bindPopup(feature.properties.name);
+        }
+    }).addTo(mymap)
+});
+*/
