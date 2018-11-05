@@ -20,3 +20,16 @@ $(function() {
         }).addTo(mymap)
     });
 });
+
+$(function() {
+    // Load GeoJSON from CMAX file
+    $.getJSON('data/cmax.geojson').done(function(cmax) {  
+        L.geoJson(cmax, {
+            style: function (feature) {
+                return {color: feature.properties.color}
+                } 
+            }).bindPopup(function (layer) {
+                return layer.feature.properties.name;
+            }).addTo(mymap)
+    });
+});
