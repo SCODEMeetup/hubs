@@ -12,8 +12,8 @@ accessToken: 'your.mapbox.access.token'
 
 $(function() {
     // Load GeoJSON from Hubs file
-    $.getJSON('data/hubs.geojson').done(function(data) {  
-        L.geoJson(data, {
+    $.getJSON('data/hubs.geojson').done(function(hubs) {  
+        L.geoJson(hubs, {
             onEachFeature: function (feature, layer) {
                 layer.bindPopup(feature.properties.name);
             }
