@@ -128,6 +128,10 @@ body {
     background: var(--purple)
 }
 
+.table-borderless {
+    border-radius: 10px;
+}
+
 /* Layout Purpose */
 #page-purpose {
     background: var(--orange)
