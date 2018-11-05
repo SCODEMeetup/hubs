@@ -10,31 +10,13 @@ id: 'mapbox.light',
 accessToken: 'your.mapbox.access.token'
 }).addTo(mymap);
 
-L.marker([39.9935, -82.9816], {opacity: 0.75}).addTo(mymap)
-    .bindPopup("<b>Linden Transit Center</b>").openPopup();
-
-L.marker([40.041019, -82.961403], {opacity: 0.75}).addTo(mymap)
-    .bindPopup("<b>Northern Lights Park & Ride</b>").openPopup();
-
-L.marker([40.060928, -82.909644], {opacity: 0.75}).addTo(mymap)
-    .bindPopup("<b>Easton Transit Center</b>").openPopup();
-
-L.marker([40.000096, -82.969183], {opacity: 0.75}).addTo(mymap)
-    .bindPopup("<b>St. Stephen's Community House</b>").openPopup();
-
-L.marker([39.969922, -82.990277], {opacity: 0.75}).addTo(mymap)
-    .bindPopup("<b>Columbus State Community College</b>").openPopup();
-
-L.marker([40.012602, -82.968394], {opacity: 0.75}).addTo(mymap)
-    .bindPopup("<b>Columbus Metropolitan Library - Linden Branch</b>").openPopup();
-
-/*
-// Load GeoJSON from Hubs file
-$.getJSON('data/hubs.geojson', function(data) {  
-    L.geoJson(data, {
-        onEachFeature: function (feature, layer) {
-            layer.bindPopup(feature.properties.name);
-        }
-    }).addTo(mymap)
+$(function() {
+    // Load GeoJSON from Hubs file
+    $.getJSON('data/hubs.geojson').done(function(data) {  
+        L.geoJson(data, {
+            onEachFeature: function (feature, layer) {
+                layer.bindPopup(feature.properties.name);
+            }
+        }).addTo(mymap)
+    });
 });
-*/
