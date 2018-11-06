@@ -31,5 +31,6 @@ $(function() {
             }).bindPopup(function (layer) {
                 return layer.feature.properties.name;
             }).addTo(mymap)
+            .openPopup()
     });
 });
